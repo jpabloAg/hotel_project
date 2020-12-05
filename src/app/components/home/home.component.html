@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTON & LILY</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a [routerLink]="['']">Home</a>
+            <a href="#">Acerca de</a>
+            <a href="#">Servicios</a>
+            <a [routerLink]="['hospedajes']">Hospedajes</a>
+            <a href="#">Consulta tu reserva</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <section class="textos-header">
+            <h1>ANTON & LILY</h1>
+            <h2>A home away from home!</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </header>
+    <main>
+        <section class="contenedor sobre-nosotros">
+            <h2 class="titulo">¿quiénes somos?</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="../../../assets/img/travelers.svg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>1</span>Un lugar mágico</h3>
+                    <p>Contamos con espacios diseñados especialmente para ti. Los niños disfrutarán de lugares especiales para ellos en el que podrán dejar volar su imaginación. </p>
+                    <h3><span>2</span>Descubra porque somos la mejor opción</h3>
+                    <p>​Brindamos satisfacción a nuestros clientes y huéspedes durante su estadía , con excelencia y calidez, ofreciendo un lugar de encuentro con ambiente familiar , tranquilidad y confort, con todas las comodidades de un gran Hotel.</p>
+                </div>
+            </div>
+        </section>
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Galeria</h2>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../../assets/img/img1.jpg" alt="">
+                        <div class="hover-galeria">
+                            <p>Nuestros empleados estarán dispuestos a todo lo que necesites</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../../assets/img/img2.jpg" alt="">
+                        <div class="hover-galeria">
+                            <p>Contamos con grandes espacios naturales</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../../assets/img/img3.jpg" alt="">
+                        <div class="hover-galeria">
+                            <p>Deja que nuestros chefs hagan de tu estadía una mejor experiencia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../../assets/img/img4.jpg" alt="">
+                        <div class="hover-galeria">
+                            <p>Lugares amplios y privados</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../../assets/img/img5.jpg" alt="">
+                        <div class="hover-galeria">
+                            <p>Contamos con salones sociales para los más grandes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../../assets/img/img6.jpg" alt="">
+                        <div class="hover-galeria">
+                            <p>Comparte momentos inolvidables con tus seres queridos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../../assets/img/img1.jpg" alt="">
+                        <div class="hover-galeria">
+                            <p>nuestro trabajo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-port">
+                    <div class="imagen-port">
+                        <img src="../../../assets/img/img2.jpg" alt="">
+                        <div class="hover-galeria">
+                            <p>nuestro trabajo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clientes contenedor">
+            <h2 class="titulo">Que dicen nuestros clientes</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="../../../assets/img/face1.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Rubi Quintero</h4>
+                        <p>Excelente lugar, la atención espectacular, la comida delicionsa. Vale la pena volver.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../../../assets/img/face2.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Elizabeth Hurtado</h4>
+                        <p>Es un lugar fabuloso, tiene excelentes espacios ideal para compartir en familia, amigos o en pareja.</p>
+                    </div>
+                </div>  
+            </div>
+        </section>
+        <section class="about-services">
+            <div class="contenedor">
+                <h2 class="titulo">Nuestros servicios</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src="../../../assets/img/spaces.svg" alt="">
+                        <h3>Espacios comodos</h3>
+                        <p>Disfruta de espacios tranquilos y pensados exclusivamente para ti, en Anton & Lily nos preocupamos de que nuestros clientes se sientan lo mas libres posible.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="../../../assets/img/wifi.svg" alt="">
+                        <h3>Wifi</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos consectetur delectus ab est voluptas quae, doloremque architecto? Eligendi illum, assumenda sed nihil eum cupiditate hic, provident amet, molestiae tenetur nesciunt.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="../../../assets/img/food.svg" alt="">
+                        <h3>Excelente comida</h3>
+                        <p>Nuestro restaurante cuenta con un diseño abierto, elegante y acogedor, con tres ambientes pensados para varios momentos y experiencias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Phone</h4>
+                <p>3205132681</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>anton&lily@gmail.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Location</h4>
+                <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
+            </div>  
+        </div>
+        <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
+    </footer>
+</body>
+</html>
