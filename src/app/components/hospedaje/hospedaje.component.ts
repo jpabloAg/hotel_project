@@ -14,6 +14,7 @@ export class HospedajeComponent implements OnInit {
   public tipoHabitaciones2: TipoHabitacion[] = [];
   constructor(private _hospedajeService: HospedajeService) {
     this.tipoHabitaciones2.push({
+      nombre:'Básica familiar',
       codigoTipo: '1',
       descripcion: 'Familiar',
       numeroBanos: 2,
@@ -23,9 +24,11 @@ export class HospedajeComponent implements OnInit {
       servicios: [
         { codigoServicio: '04', servicio: 'spa' },
         { codigoServicio: '05', servicio: 'television' }
-      ]
+      ],
+      imagen:"../../../assets/img/batman.png"
     });
     this.tipoHabitaciones2.push({
+      nombre:'estandar familiar',
       codigoTipo: '2',
       descripcion: 'Pareja',
       numeroBanos: 1,
@@ -35,9 +38,11 @@ export class HospedajeComponent implements OnInit {
       servicios: [
         { codigoServicio: '04', servicio: 'spa' },
         { codigoServicio: '05', servicio: 'television' }
-      ]
+      ],
+      imagen:"../../../assets/img/batman.png"
     });
     this.tipoHabitaciones2.push({
+      nombre:'Básica familiar',
       codigoTipo: '2',
       descripcion: 'Pareja',
       numeroBanos: 1,
@@ -47,9 +52,11 @@ export class HospedajeComponent implements OnInit {
       servicios: [
         { codigoServicio: '04', servicio: 'spa' },
         { codigoServicio: '05', servicio: 'television' }
-      ]
+      ],
+      imagen:"../../../assets/img/batman.png"
     });
     this.tipoHabitaciones2.push({
+      nombre:'Básica familiar',
       codigoTipo: '2',
       descripcion: 'Pareja',
       numeroBanos: 1,
@@ -59,9 +66,11 @@ export class HospedajeComponent implements OnInit {
       servicios: [
         { codigoServicio: '04', servicio: 'spa' },
         { codigoServicio: '05', servicio: 'television' }
-      ]
+      ],
+      imagen:"../../../assets/img/batman.png"
     });
     this.tipoHabitaciones2.push({
+      nombre:'Básica familiar',
       codigoTipo: '2',
       descripcion: 'Pareja',
       numeroBanos: 1,
@@ -71,9 +80,11 @@ export class HospedajeComponent implements OnInit {
       servicios: [
         { codigoServicio: '04', servicio: 'spa' },
         { codigoServicio: '05', servicio: 'television' }
-      ]
+      ],
+      imagen:"../../../assets/img/batman.png"
     });
     this.tipoHabitaciones2.push({
+      nombre:'Básica familiar',
       codigoTipo: '2',
       descripcion: 'Pareja',
       numeroBanos: 1,
@@ -83,9 +94,11 @@ export class HospedajeComponent implements OnInit {
       servicios: [
         { codigoServicio: '04', servicio: 'spa' },
         { codigoServicio: '05', servicio: 'television' }
-      ]
+      ],
+      imagen:"../../../assets/img/batman.png"
     });
     this.tipoHabitaciones2.push({
+      nombre:'Básica familiar',
       codigoTipo: '2',
       descripcion: 'Pareja',
       numeroBanos: 1,
@@ -95,7 +108,8 @@ export class HospedajeComponent implements OnInit {
       servicios: [
         { codigoServicio: '04', servicio: 'spa' },
         { codigoServicio: '05', servicio: 'television' }
-      ]
+      ],
+      imagen:"../../../assets/img/batman.png"
     });
   }
 

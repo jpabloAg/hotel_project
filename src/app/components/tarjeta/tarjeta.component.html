@@ -1,11 +1,12 @@
 <div class="card">
-    <img class="card-img-top img-fluid" src="../../../assets/img/batman.png">
+    <img class="card-img-top img-fluid" [src]="tipoHabitacion.imagen">
     <div class="card-body">
-        <h4 class="card-title">{{ tipoHabitacion.codigoTipo }}</h4>
-        <p class="card-text"> {{ tipoHabitacion.numeroPersonas }} </p>
-        <p class="card-text"> {{ tipoHabitacion.numeroCamas }} </p>
-        <p class="card-text"> {{ tipoHabitacion.numeroBanos }} </p>
-        <p class="card-text"> {{ tipoHabitacion.precio }} </p>
-        <p class="card-text"><small class="text-muted">{{ tipoHabitacion.descripcion }}</small></p>
+        <h4 class="card-title">Nombre: {{ tipoHabitacion.nombre }}</h4>
+        <p class="card-text">Código: {{ tipoHabitacion.codigoTipo }} </p>
+        <p class="card-text">#camas: {{ tipoHabitacion.numeroCamas }} </p>
+        <p class="card-text">#personas {{ tipoHabitacion.numeroPersonas }} </p>
+        <p class="card-text">#baños {{ tipoHabitacion.numeroBanos }} </p>
+        <p class="card-text">precio {{ tipoHabitacion.precio }} </p>
+        <p class="card-text"><small class="text-muted">descripcion: {{ tipoHabitacion.descripcion }}</small></p>
     </div>
 </div>
