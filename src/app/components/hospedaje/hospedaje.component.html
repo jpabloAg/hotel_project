@@ -4,7 +4,7 @@
         <a href="#">Acerca de</a>
         <a href="#">Servicios</a>
         <a [routerLink]="['hospedajes']">Hospedajes</a>
-        <a href="#">Consulta tu reserva</a>
+        <a [routerLink]="['/consulta']">Consulta tu reserva</a>
         <a href="#">Contacto</a>
     </nav>
     <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
@@ -17,3 +17,21 @@
 <div class="card-columns">
   <app-tarjeta [tipoHabitacion]="_tipoHabitacion" [index]="i"  *ngFor="let _tipoHabitacion of tipoHabitaciones2; let i = index"></app-tarjeta>
 </div>
+
+<footer>
+  <div class="contenedor-footer">
+      <div class="content-foo">
+          <h4>Phone</h4>
+          <p>3205132681</p>
+      </div>
+      <div class="content-foo">
+          <h4>Email</h4>
+          <p>anton&lily@gmail.com</p>
+      </div>
+      <div class="content-foo">
+          <h4>Location</h4>
+          <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
+      </div>  
+  </div>
+  <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
+</footer>

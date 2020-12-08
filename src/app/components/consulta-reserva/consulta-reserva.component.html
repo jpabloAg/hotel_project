@@ -1,0 +1,35 @@
+<section class="contenedor sobre-nosotros">
+    <h2 class="titulo">Ingrese el código de la reserva</h2>
+    <div class="contenedor-sobre-nosotros">
+        <div class="contenido-textos">
+            <form action="" class="form" #formReserva>
+                <input type="text" class="form-field" placeholder="Código de reserva"  [(ngModel)]="codigoReserva" [ngModelOptions]="{standalone: true}" required>
+                <button class="consultar" (click)="buscarReserva()">Consultar</button>
+            </form>    
+        </div>
+    </div>
+</section>
+
+<section class="response">
+    <div class="contenedor">
+        {{ reserva | json }}
+    </div>
+</section>
+
+<footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Phone</h4>
+            <p>3205132681</p>
+        </div>
+        <div class="content-foo">
+            <h4>Email</h4>
+            <p>anton&lily@gmail.com</p>
+        </div>
+        <div class="content-foo">
+            <h4>Location</h4>
+            <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
+        </div>  
+    </div>
+    <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
+</footer>

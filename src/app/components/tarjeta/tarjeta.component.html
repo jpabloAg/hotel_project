@@ -1,12 +1,19 @@
-<div class="card">
-    <img class="card-img-top img-fluid" [src]="tipoHabitacion.imagen">
-    <div class="card-body">
-        <h4 class="card-title">Nombre: {{ tipoHabitacion.nombre }}</h4>
-        <p class="card-text">Código: {{ tipoHabitacion.codigoTipo }} </p>
-        <p class="card-text">#camas: {{ tipoHabitacion.numeroCamas }} </p>
-        <p class="card-text">#personas {{ tipoHabitacion.numeroPersonas }} </p>
-        <p class="card-text">#baños {{ tipoHabitacion.numeroBanos }} </p>
-        <p class="card-text">precio {{ tipoHabitacion.precio }} </p>
-        <p class="card-text"><small class="text-muted">descripcion: {{ tipoHabitacion.descripcion }}</small></p>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-5">
+            <img class="card-img-top img-fluid" [src]="tipoHabitacion.urlImagen">
+        </div>
+        <div class="col-md-7">
+            <h2 class="card-title mt-2 text-center">{{ tipoHabitacion.nombre }}</h2>
+            <div class="card-body">
+                <P>{{ tipoHabitacion.descripcion1 }}</P>
+                <p class="card-text"><i class="fas fa-users"></i> {{ tipoHabitacion.numeroPersonas }} <i class="fas fa-bed"></i> {{ tipoHabitacion.numeroCamas }} <i class="fas fa-shower"></i> {{ tipoHabitacion.numeroBanos }} </p> 
+                <small class="muted">From:</small>
+                <p class="card-text"><i class="fas fa-dollar-sign"></i> {{ tipoHabitacion.precio }} </p>
+            </div>
+            <div class="card-body">
+                <a [routerLink]="['/habitacion', tipoHabitacion.codigoTipo]">Más Información</a>
+            </div>
+        </div>
     </div>
 </div>

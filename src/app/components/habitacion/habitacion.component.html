@@ -1,0 +1,106 @@
+<header>
+    <nav>
+        <a [routerLink]="['/']">Home</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Servicios</a>
+        <a [routerLink]="['/hospedajes']">Hospedajes</a>
+        <a [routerLink]="['/consulta']">Consulta tu reserva</a>
+        <a href="#">Contacto</a>
+    </nav>
+    <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+            style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                style="stroke: none; fill: #fff;"></path>
+        </svg></div>
+</header>
+
+
+
+<div class="container ">
+    <div class="row row-cols-2">
+        <div class="col-md-8">
+            <h2>{{ habitacion.nombre }}</h2>
+            <img class="img-fluid image" [src]="habitacion.urlImagen">
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <small>From</small>
+                    <h2 class="card-title"><i class="fas fa-dollar-sign"></i> {{ habitacion.precio }}</h2>
+                    <small>Por Noche</small>
+                    <hr>
+                    <form>
+                        <div class="form-group">
+                            <label for="fechaingreso">Fecha de ingreso</label>
+                            <input type="text" name="fechaingreso" bsDatepicker class="form-control"
+                                [(ngModel)]="fechaIngreso">
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="fechasalida">Fecha de Salida</label>
+                            <input type="text" name="fechasalida" bsDatepicker class="form-control"
+                                [(ngModel)]="fechaSalida">
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <a class="btn-block reserva" (click)="verificarReserva()">Reservar</a>
+                        </div>
+                        <div class="form-group" *ngIf="!disponibilidad">
+                            <div class="alert alert-danger" role="alert">
+                                Lo sentimos, todas las habitaciones del tipo <strong>{{ habitacion.nombre }}</strong>
+                                estan ocupadas.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container moreInfo">
+    <div class="row row-cols-3">
+        <div class="col-md-8">
+            <h3>Más información</h3>
+            <p>{{ habitacion.descripcion2 }}</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Propiedades</h3>
+            <p class="card-text"><i class="fas fa-users"></i> {{ habitacion.numeroPersonas }} <i class="fas fa-bed"></i>
+                {{ habitacion.numeroCamas }} <i class="fas fa-shower"></i> {{ habitacion.numeroBanos }} </p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h3>Servicios</h3>
+    <ul>
+        <li *ngFor="let servicio of habitacion.servicios" style="list-style:none;">
+            <p *ngIf="servicio.codigoServicio==1"><i class="fas fa-2x fa-snowflake"></i> {{ servicio.servicio }}</p>
+            <p *ngIf="servicio.codigoServicio==2"><i class="fas fa-2x fa-tv"></i> {{ servicio.servicio }}</p>
+            <p *ngIf="servicio.codigoServicio==3"><i class="fas fa-2x fa-wifi"></i> {{ servicio.servicio }}</p>
+            <p *ngIf="servicio.codigoServicio==4"><i class="fas fa-2x fa-phone"></i> {{ servicio.servicio }}</p>
+            <p *ngIf="servicio.codigoServicio==6"><i class="fas fa-2x fa-hot-tub"></i> {{ servicio.servicio }}</p>
+            <p *ngIf="servicio.codigoServicio==7"><i class="fas fa-2x fa-briefcase"></i> {{ servicio.servicio }}</p>
+            <p *ngIf="servicio.codigoServicio==8"><i class="fas fa-2x fa-glass-martini-alt"></i> {{ servicio.servicio }}</p>
+        </li>
+    </ul>
+</div>
+
+<footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Phone</h4>
+            <p>3205132681</p>
+        </div>
+        <div class="content-foo">
+            <h4>Email</h4>
+            <p>anton&lily@gmail.com</p>
+        </div>
+        <div class="content-foo">
+            <h4>Location</h4>
+            <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
+        </div>
+    </div>
+    <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
+</footer>

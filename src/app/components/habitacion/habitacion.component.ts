@@ -1,18 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TipoHabitacion } from 'src/app/modelos/tipoHabitacion';
+import { ReservaService } from 'src/app/servicios/reserva.service';
 import { HospedajeService } from '../../servicios/hospedaje.service';
 
 
 @Component({
-  selector: 'app-hospedaje',
-  templateUrl: './hospedaje.component.html',
-  styleUrls: ['./hospedaje.component.css']
+  selector: 'app-habitacion',
+  templateUrl: './habitacion.component.html',
+  styleUrls: ['./habitacion.component.css']
 })
-export class HospedajeComponent implements OnInit {
-
-  public tipoHabitaciones: TipoHabitacion[];
+export class HabitacionComponent implements OnInit {
+  
+  public fechaIngreso:any;
+  public fechaSalida:any;
   public tipoHabitaciones2: TipoHabitacion[] = [];
-  constructor(private _hospedajeService: HospedajeService) {
+  public habitacion:any;
+  public codigoHabitacion:string;
+  public disponibilidad:boolean;
+  constructor(  private _router:Router,
+                private _route:ActivatedRoute,
+                private _hospedajeService:HospedajeService,
+                private _reservaService:ReservaService) {
+    this.disponibilidad = true;
     this.tipoHabitaciones2.push({
       nombre:'Standard Room',
       codigoTipo: '1',
@@ -106,17 +116,45 @@ export class HospedajeComponent implements OnInit {
         { codigoServicio: '6', servicio: 'Tina' }
       ],
       urlImagen:"../../../assets/hospedaje/coupleRoom.jpg"
-    });
-    
+    });                
   }
 
   ngOnInit(): void {
-    /*this._hospedajeService.getHospedajes().subscribe(
+    
+    this._route.params.subscribe( param => {
+      this.habitacion = this.tipoHabitaciones2.find( tipo => tipo.codigoTipo == param.codigoTipoHabitacion);
+      /*this._hospedajeService.getHospedaje(param.codigoTipoHabitacion).subscribe(
+        response => {
+          this.habitacion = response;
+          console.log(this.habitacion);
+        }
+      )*/
+    });
+  }
+  response:number = 1;
+  public verificarReserva(){
+    this.codigoHabitacion = this._route.snapshot.paramMap.get('codigoTipoHabitacion');
+    this.fechaIngreso = this.formatearFecha(this.fechaIngreso);
+    this.fechaSalida = this.formatearFecha(this.fechaSalida);
+    if(this.response == 0){
+      this.disponibilidad = false;
+    }else if(this.response > 0){
+      this._router.navigate(["/reserva", this.response, this.fechaIngreso, this.fechaSalida]);
+    }
+    //this.habitacion = await this._hospedajeService.getHospedaje2(this.codigoHabitacion);
+    //console.log(this.habitacion);
+    /*this._reservaService.verificarDisponibilidad(this.codigoHabitacion, this.fechaIngreso, this.fechaSalida).subscribe(
       response => {
-        this.tipoHabitaciones = response;
-        console.log(this.tipoHabitaciones);
+        if(response == 0){
+          this.disponibilidad = false;
+        }else if(response > 0){
+          this._router.navigate(["/reserva", this.response, this.fechaIngreso, this.fechaSalida]);
+        }
       }
-    )*/
+    );*/
   }
 
+  private formatearFecha(date:Date){
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+  }
 }

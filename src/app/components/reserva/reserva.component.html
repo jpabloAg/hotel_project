@@ -1,0 +1,67 @@
+<header>
+    <nav>
+        <a [routerLink]="['/']">Home</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Servicios</a>
+        <a [routerLink]="['/hospedajes']">Hospedajes</a>
+        <a [routerLink]="['/consulta']">Consulta tu reserva</a>
+        <a href="#">Contacto</a>
+    </nav>
+    <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+            style="height: 100%; width: 100%;">
+            <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                style="stroke: none; fill: #fff;"></path>
+        </svg></div>
+</header>
+
+
+<div class="container">
+    <div class="left">
+        <div class="header">
+            <h2 class="animation a1 text-center">Sistema de reservas</h2>
+            <h4 class="animation a2 text-center">Porfavor diligencia el siguiente formulario para proseguir con la reserva</h4>
+        </div>
+        <form action="" class="form" #formReserva>
+            <input type="text" class="form-field animation a3" placeholder="Primer Nombre"  [(ngModel)]="cliente.nombre" [ngModelOptions]="{standalone: true}" required>
+            <input type="text" class="form-field animation a3" placeholder="Primer Apellido"  [(ngModel)]="cliente.apellido" [ngModelOptions]="{standalone: true}" required>
+            <input type="email" class="form-field animation a3" placeholder="Email"  [(ngModel)]="cliente.email" [ngModelOptions]="{standalone: true}" required>
+            <input type="text" class="form-field animation a4" placeholder="Documento de Identificación"  [(ngModel)]="cliente.cedula" [ngModelOptions]="{standalone: true}" required>
+            <input type="text" class="form-field animation a3" placeholder="Cel"  [(ngModel)]="cliente.celular" [ngModelOptions]="{standalone: true}" required>
+            <span *ngIf="fechaIngreso" class="animation a5">Fecha de ingreso: {{ fechaIngreso }}</span>
+            <span *ngIf="fechaSalida" class="animation a5">Fecha de salida: {{ fechaSalida }}</span>
+            <p class="animation a5 mt-2"><a href="#">Ya tiene una reserva?, consultela aqui!</a></p>
+            <button class="animation a6" (click)="reservar(formReserva, reservaModal)">RESERVAR</button>
+        </form>
+    </div>
+    <div class="right" style="margin-bottom: 10PX;"></div>
+</div>
+
+<ng-template #reservaModal>
+    <div class="modal-header">
+        <h2 class="modal-title text-center">Reserva creada exitosamente!</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Se ha creado una reserva a tu nombre en la aplicación de Anton & Lily, por favor si deseas saber más información sobre tu reserva puedes consultarla con el siguiente codigo <strong>{{ codigoReserva }}</strong> en el menu <strong><a [routerLink]="['/consulta']" data-dismiss="modal" aria-label="Close"> Consultar reservas</a></strong>.
+    </div>
+</ng-template>
+
+<footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Phone</h4>
+            <p>3205132681</p>
+        </div>
+        <div class="content-foo">
+            <h4>Email</h4>
+            <p>anton&lily@gmail.com</p>
+        </div>
+        <div class="content-foo">
+            <h4>Location</h4>
+            <p>Cl. 67 ##53-108, Medellín, Antioquia</p>
+        </div>
+    </div>
+    <h2 class="titulo-final">&copy; ANTON & LILY | Universidad de Antioquia</h2>
+</footer>
