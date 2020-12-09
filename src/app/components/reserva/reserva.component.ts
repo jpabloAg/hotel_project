@@ -52,9 +52,8 @@ export class ReservaComponent implements OnInit {
     this.reserva.fechaIngreso = this.fechaIngreso;
     this.reserva.fechaSalida = this.fechaSalida;
     this.reserva.cedulaCliente = this.cliente.cedula;
-    this._modalService.open(reservaModal);
-    this.fechaIngreso = ''
-    this.fechaSalida = '';
+    
+    
     //this._clienteService.registrarCliente(this.cliente);
     /*this._reservaService.registrarReservar(this.reserva).subscribe(
       response => {
@@ -62,6 +61,7 @@ export class ReservaComponent implements OnInit {
         this.fechaIngreso = ''; 
         this.fechaSalida = '';
         formReserva.reset();
+        this._modalService.open(reservaModal);
       }
     )*/
     

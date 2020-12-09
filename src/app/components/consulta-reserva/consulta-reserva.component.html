@@ -10,11 +10,57 @@
     </div>
 </section>
 
-<section class="response">
+<section class="response" *ngIf="reserva">
     <div class="contenedor">
-        {{ reserva | json }}
+        <h3><strong>Código de la reserva:</strong> {{ reserva.codigoReserva }}</h3>
+        <h3><strong>Documento de identificación del responsable:</strong> {{ reserva.cedulaCliente }}</h3>
+        <h3><strong>Número de la habtiación:</strong> {{ reserva.numeroHabitacion }}</h3>
+        <h3><strong>Fecha de ingreso:</strong> {{ reserva.fechaIngreso }}</h3>
+        <h3><strong>Fecha de salida:</strong> {{ reserva.fechaSalida }}</h3>
+        <button class="consultar" (click)="eliminarReserva(deleteModal)">Eliminar reserva</button>
+        <button class="consultar" (click)="mostrarModalUpdate(updateModal)">Actualizar reserva</button>
     </div>
 </section>
+
+<ng-template #deleteModal>
+    <div class="modal-header">
+        <h2 class="modal-title text-center">Reserva Cancelada exitosamente!</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        Se ha eliminado la reserva con código <strong>{{ reservaElminada.codigoReserva }}</strong> al cliente con número de identificacion <strong>{{ reservaElminada.cedulaCliente }}</strong> en la aplicación de Anton & Lily.
+    </div>
+</ng-template>
+
+<ng-template #updateModal>
+    <div class="modal-header">
+        <h2 class="modal-title text-center">Puedes cambiar las fechas de tu estadía y ajustarte a lo que mejor te convenga</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="fechaingreso">Fecha de ingreso</label>
+                <input type="text" name="fechaingreso" bsDatepicker class="form-control"
+                    [(ngModel)]="fechaIngreso">
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="fechasalida">Fecha de Salida</label>
+                <input type="text" name="fechasalida" bsDatepicker class="form-control"
+                    [(ngModel)]="fechaSalida">
+            </div>
+            <hr>
+            <div class="form-group">
+                <button class="consultar cambios" (click)="actualizarReserva(reserva)">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
 
 <footer>
     <div class="contenedor-footer">

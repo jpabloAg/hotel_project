@@ -23,4 +23,12 @@ export class ReservaService {
   public buscarReserva(codigoReserva:string):Observable<Reserva>{
     return this._http.get<Reserva>(`${this.url}/reserva?codigo=${codigoReserva}`);
   }
+
+  public cancelarReserva(codigoReserva:string):Observable<Reserva>{
+    return this._http.delete<Reserva>(`${this.url}/reserva?codigo=${codigoReserva}`);
+  }
+
+  public actualizarReserva(reserva:Reserva):Observable<Reserva>{
+    return this._http.put<Reserva>(`${this.url}/reserva?codigo=${reserva.codigoReserva}`, reserva);
+  }
 }

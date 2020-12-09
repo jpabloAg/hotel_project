@@ -43,6 +43,10 @@
     margin-bottom: 20px;
     width: 500px;
 }
+
+.cambios{
+    width:470px;
+}
   
   .form-field:focus {
     border-color: #0f7ef1;
