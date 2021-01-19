@@ -57,7 +57,7 @@ export class ReservaComponent implements OnInit {
     //this._clienteService.registrarCliente(this.cliente);
     /*this._reservaService.registrarReservar(this.reserva).subscribe(
       response => {
-        this.codiogReserva = response.codigoReserva;
+        this.codigoReserva = response.codigoReserva;
         this.fechaIngreso = ''; 
         this.fechaSalida = '';
         formReserva.reset();
